@@ -16,11 +16,19 @@ export class PostPageComponent {
     id: number = 0;
     titlePost: string = '';
     bodyPost: string = '';
+    ImagePrincipalArticle: boolean = false;
 
 
     ngOnInit(): void {
       this.id = Number(this.route.snapshot.params['id']);
+      this.showPrincipalArticle();
       this.getPostByID();
+    }
+
+    showPrincipalArticle(){
+      setInterval(() => {
+          this.ImagePrincipalArticle = true;
+      },2000)
     }
 
   /*------------------------------------------------------*/

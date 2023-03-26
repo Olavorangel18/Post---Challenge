@@ -1,0 +1,81 @@
+div{
+    h2{
+        max-width: 700px;
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 100%;
+        text-align: center;
+    }
+    
+    .bar{
+        width:50%;
+        max-width:600px;
+        min-width: 300px;
+        height: 2px;
+        background-color: #333;
+        margin: 0 auto;
+    }
+
+    .bar-second{
+        width:50%;
+        max-width:600px;
+        min-width: 300px;
+        height: 2px;
+        border-top: 1px dashed #000000;
+        margin: 0 auto;
+    }
+
+    .content{
+        width:50%;
+        max-width:600px;
+        min-width: 300px;
+        top: -30px !important;
+        position: relative;
+
+        .post{
+            p{
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 170%;
+            }
+        }
+    
+    }
+}
+
+.user{
+    gap: 15px;
+    img{
+        border-radius: 9999px;
+    }
+}
+
+
+.info{
+    gap: 10px;
+    p{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 170%;
+        color: #5c5c5c;
+    }
+}
+
+.comment{
+    width:80%;
+    min-width: 300px;
+    max-width: 800px;
+}
+
+h4{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    width:calc(80% + 60px);
+    min-width: 300px;
+    max-width: 860px;
+}
+
+

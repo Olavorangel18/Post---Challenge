@@ -1,31 +1,51 @@
-<h2>{{titlePost}}</h2>
-<img alt="imagem do post">
-<div class="bar"></div>
-<div class="content">
-    <div class="user">
-        <img alt="imagem do usuário">
-        <div class="info">
-            <h3>Nome do usuário</h3>
-            <p>Descrição do usuário</p>
+<div class="w-100 h-100 flex f-col gap-3 align-center">
+    <h2>{{titlePost}}</h2>
+    <ngx-skeleton-loader *ngIf="!ImagePrincipalArticle" count="5"
+    [theme]="{ 
+        'border-radius': '5px',
+        height: '30px',
+        width: '100vw',
+        border: '1px solid white'
+      }"></ngx-skeleton-loader>
+    <img [ngClass]="{'display-none': ImagePrincipalArticle === false}"  class="w-100 h-100" alt="imagem do post" src="https://api.lorem.space/image/book?w=1100&amp;amp;amp;amp;h=533">
+    <div class="bar"></div>
+    <div class="content flex f-col gap-3">
+        <div class="user flex align-center">
+            <img alt="imagem do usuário" src="https://api.lorem.space/image/face?w=56&amp;amp;amp;amp;h=56">
+            <div class="info flex f-col">
+                <h3>Nome do usuário</h3>
+                <p>Descrição do usuário</p>
+            </div>
+        </div>
+        <div class="post">
+            <p>{{bodyPost}}</p>
+        </div>
+        <div class="post">
+            <p>{{bodyPost}}</p>
+        </div>
+        <div class="post">
+            <p>{{bodyPost}}</p>
+        </div>
+        <div class="post">
+            <p>{{bodyPost}}</p>
+        </div>
+                <div class="post">
+            <p>{{bodyPost}}</p>
         </div>
     </div>
-    <div class="post">
-        <p>{{bodyPost}}</p>
-    </div>
-    <div class="post">
-        <p>{{bodyPost}}</p>
-    </div>
-    <div class="post">
-        <p>{{bodyPost}}</p>
-    </div>
-</div>
-<div class="bar-second"></div>
+    <div class="bar-second"></div>
+    <div class="comments w-100 flex gap-3 f-col align-center">
+        <h4 class="flex justify-start">Comments (10)</h4>
+        <div class="flex f-col align-start mb-3">
+            <div class="user flex">
+                <img style="height: 56px;" alt="imagem do usuário" src="https://api.lorem.space/image/face?w=56&amp;amp;amp;amp;h=56">
+                <div class="info flex f-col comment">
+                    <h3>Nome do usuário</h3>
+                    <p>Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet Lorem Ipsum dolor sit amet</p>
+                </div>
+            </div>    
 
-<div class="user">
-    <img alt="imagem do usuário">
-    <div class="info">
-        <h3>Nome do usuário</h3>
-        <p>Descrição do usuário</p>
+        </div>
     </div>
 </div>
 
