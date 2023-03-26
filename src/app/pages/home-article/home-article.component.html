@@ -7,17 +7,17 @@
             width: '100%',
             border: '1px solid white'
           }"></ngx-skeleton-loader>
-        <div [ngClass]="{'display-none': ImagePrincipalArticle === false}" class="flex f-col align-center gap-3">
+        <div [id]="listaPosts[0].id" [ngClass]="{'display-none': ImagePrincipalArticle === false}" class="flex f-col align-center gap-3">
             <img alt="principal article" src="https://api.lorem.space/image/game?w=1100&amp;amp;amp;amp;h=533">
-            <h2>Loren Ipsum Dolor Sit Amet </h2>
-            <p>Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit Amet Loren Ipsum Dolor Sit Amet</p>
+            <h2>{{listaPosts[0].title}} </h2>
+            <p>{{listaPosts[0].body}}</p>
         </div>
     </div>
     <div class="bar mt-3 mb-3"></div>
     <div class="list-articles flex f-col align-center mb-3">
         <h4 class="mb-3">All articles</h4>
         <div class="articles flex f-wrap justify-center gap-row-3 gap-col-15">
-            <app-article-item [articleTitle]="'Nome do Artigo'"></app-article-item>
+            <app-article-item *ngFor="let post of listaPosts" [articleTitle]="post.title" [id]="post.id"></app-article-item>
         </div>
     </div>
 </div>

@@ -26,6 +26,8 @@ ngx-skeleton-loader{
             letter-spacing: 0.1em;
             line-height: 170%;
         }
+
+        cursor: pointer;
     }
 
     .bar{
@@ -50,6 +52,7 @@ ngx-skeleton-loader{
             width: 650px;
             app-article-item{
                 width: 300px;
+                cursor: pointer;
             }
         }
     }
