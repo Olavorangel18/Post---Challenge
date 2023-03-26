@@ -10,6 +10,7 @@ import { BrokerBackendService } from './services/brocker-backend/brocker-backend
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleItemComponent } from './components/article-item/article-item.component';
 import { PostPageComponent } from './pages/post-page/post-page.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PostPageComponent } from './pages/post-page/post-page.component';
     HeaderComponent,
     HomeArticleComponent,
     ArticleItemComponent,
-    PostPageComponent
+    PostPageComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
