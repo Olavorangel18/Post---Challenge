@@ -61,7 +61,7 @@ export class BrokerBackendService {
 
   getUrlRequisicaoCompleta(backendPath: string, apiBaseUrlId?: string): string {
 
-    return 'http://127.0.0.1:3000' + backendPath;
+    return 'https://jsonplaceholder.typicode.com' + backendPath;
 
   }
 }
