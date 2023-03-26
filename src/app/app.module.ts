@@ -12,6 +12,7 @@ import { ArticleItemComponent } from './components/article-item/article-item.com
 import { PostPageComponent } from './pages/post-page/post-page.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { PostsService } from './services/posts/post.service';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -20,12 +21,14 @@ import { PostsService } from './services/posts/post.service';
     HomeArticleComponent,
     ArticleItemComponent,
     PostPageComponent,
-    CommentComponent
+    CommentComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxPaginationModule,
     NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
   ],
   providers: [BrokerBackendService, PostsService],

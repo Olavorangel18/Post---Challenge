@@ -21,6 +21,7 @@ export class HomeArticleComponent {
   principalArticleId: number = 0;
   principalArticleTitle: string = '';
   principalArticleBody: string = '';
+  page:number = 1;
 
   ngOnInit(): void {
     this.getPosts();
@@ -53,10 +54,22 @@ export class HomeArticleComponent {
       this.principalArticleId = this.listaPosts[0].id;
       this.principalArticleTitle = this.listaPosts[0].title;
       this.principalArticleBody = this.listaPosts[0].body;
-      
+      this.listaPosts = this.divideLista(this.listaPosts, 10);
+      console.log(this.listaPosts)
     }, error => {
       console.log(error)
     });
+  }
+
+  divideLista(lista:any[], n:number) {
+    var subListas = [];
+    var tamanhoSubLista = Math.ceil(lista.length/n);
+    
+    for (var i = 0; i < lista.length; i += tamanhoSubLista) {
+      subListas.push(lista.slice(i, i+tamanhoSubLista));
+    }
+    
+    return subListas;
   }
 
   openPost(e:any){
