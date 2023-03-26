@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PostsService } from 'src/app/services/complaints/post.service';
 import { Post } from 'src/app/models/post.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-article',
@@ -10,7 +11,8 @@ import { Post } from 'src/app/models/post.model';
 export class HomeArticleComponent {
 
   constructor(
-    private postService: PostsService
+    private postService: PostsService,
+    private router: Router
   ) { }
 
   listaPosts: any[] = [];
@@ -28,7 +30,7 @@ export class HomeArticleComponent {
     },2000)
   }
 
-    /*------------------------------------------------------*/
+  /*------------------------------------------------------*/
    
   //               Requisições para o backend
 
@@ -47,6 +49,10 @@ export class HomeArticleComponent {
     }, error => {
       console.log(error)
     });
+  }
+
+  openPost(e:any){
+    this.router.navigateByUrl(`/post/${e.currentTarget.id}`);
   }
 
 }

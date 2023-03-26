@@ -5,7 +5,7 @@ import { PostPageComponent } from './pages/post-page/post-page.component';
 
 const routes: Routes = [
   {path : '', component : HomeArticleComponent},
-  {path : '/post/:id', component : PostPageComponent},
+  {path : 'post/:id', component : PostPageComponent},
 ];
 
 @NgModule({

@@ -17,7 +17,7 @@
     <div class="list-articles flex f-col align-center mb-3">
         <h4 class="mb-3">All articles</h4>
         <div class="articles flex f-wrap justify-center gap-row-3 gap-col-15">
-            <app-article-item *ngFor="let post of listaPosts" [articleTitle]="post.title" [id]="post.id"></app-article-item>
+            <app-article-item (click)="openPost($event)" *ngFor="let post of listaPosts" [articleTitle]="post.title" [id]="post.id"></app-article-item>
         </div>
     </div>
 </div>
