@@ -9,13 +9,15 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { BrokerBackendService } from './services/brocker-backend/brocker-backend.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleItemComponent } from './components/article-item/article-item.component';
+import { PostPageComponent } from './pages/post-page/post-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeArticleComponent,
-    ArticleItemComponent
+    ArticleItemComponent,
+    PostPageComponent
   ],
   imports: [
     BrowserModule,
