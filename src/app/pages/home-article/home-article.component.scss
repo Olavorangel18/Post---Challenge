@@ -9,7 +9,7 @@
         }
 
         h2{
-            max-width: 500px;
+            max-width: 600px;
             font-weight: 700;
             font-size: 54px;
             line-height: 100%;
@@ -23,5 +23,13 @@
             letter-spacing: 0.1em;
             line-height: 170%;
         }
+    }
+
+    .bar{
+        width:100%;
+        max-width:500px;
+        height: 2px;
+        background-color: #333;
+        margin: 0 auto;
     }
 }
