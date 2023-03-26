@@ -35,9 +35,9 @@
     </div>
     <div class="bar-second"></div>
     <div class="comments w-100 flex gap-3 f-col align-center">
-        <h4 class="flex justify-start">Comments (10)</h4>
+        <h4 class="flex justify-start">Comments ({{commentList.length}})</h4>
         <div class="flex f-col align-start mb-3">
-            <app-comment class="user flex comment"></app-comment>
+            <app-comment *ngFor="let comment of commentList" [comment]="comment.body" [username]="comment.email" class="user flex comment mb-3"></app-comment>
         </div>
     </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 import { PostsService } from 'src/app/services/posts/post.service';
+import {Comment} from 'src/app/models/comment.model';
 import { Post } from 'src/app/models/post.model';
 
 @Component({
@@ -17,6 +18,7 @@ export class PostPageComponent {
     titlePost: string = '';
     bodyPost: string = '';
     ImagePrincipalArticle: boolean = false;
+    commentList: Comment[] = [];
 
 
     ngOnInit(): void {
@@ -50,8 +52,18 @@ export class PostPageComponent {
   }
 
   getCommentsPostByID() {
-    this.postService.getPostByIDComments(this.id).subscribe((response: Post) => {
-      console.log(response)
+    this.postService.getPostByIDComments(this.id).subscribe((response: any) => {
+      response.forEach((comment:any) => {
+        this.commentList.push(
+          new Comment(
+            comment.body,
+            comment.email,
+            comment.id,
+            comment.name,
+            comment.postId
+          )
+        )
+      })
       },
       error => {
         console.log(error)
