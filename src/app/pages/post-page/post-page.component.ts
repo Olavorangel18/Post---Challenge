@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
-import { PostsService } from 'src/app/services/complaints/post.service';
+import { PostsService } from 'src/app/services/posts/post.service';
 import { Post } from 'src/app/models/post.model';
 
 @Component({
@@ -23,6 +23,7 @@ export class PostPageComponent {
       this.id = Number(this.route.snapshot.params['id']);
       this.showPrincipalArticle();
       this.getPostByID();
+      this.getCommentsPostByID();
     }
 
     showPrincipalArticle(){
@@ -46,6 +47,15 @@ export class PostPageComponent {
         console.log(error)
       })
       
+  }
+
+  getCommentsPostByID() {
+    this.postService.getPostByIDComments(this.id).subscribe((response: Post) => {
+      console.log(response)
+      },
+      error => {
+        console.log(error)
+      })
   }
     
 }

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArticleItemComponent } from './components/article-item/article-item.component';
 import { PostPageComponent } from './pages/post-page/post-page.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { PostsService } from './services/posts/post.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { CommentComponent } from './components/comment/comment.component';
     HttpClientModule,
     NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
   ],
-  providers: [BrokerBackendService],
+  providers: [BrokerBackendService, PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
