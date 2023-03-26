@@ -1,0 +1,11 @@
+<ngx-skeleton-loader *ngIf="!imageToShow" count="5"
+[theme]="{ 
+    'border-radius': '5px',
+    height: '15px',
+    width: '100%',
+    border: '1px solid white'
+  }"></ngx-skeleton-loader>
+  <div [ngClass]="{'display-none': imageToShow === false}" class="item">
+    <img alt="article" src="https://api.lorem.space/image/game?w=300&amp;amp;amp;amp;h=176">
+    <h5>{{articleTitle}}</h5>
+  </div>
