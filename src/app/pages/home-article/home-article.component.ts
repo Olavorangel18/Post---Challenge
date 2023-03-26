@@ -18,6 +18,9 @@ export class HomeArticleComponent {
   listaPosts: any[] = [];
 
   ImagePrincipalArticle: boolean = false;
+  principalArticleId: number = 0;
+  principalArticleTitle: string = '';
+  principalArticleBody: string = '';
 
   ngOnInit(): void {
     this.getPosts();
@@ -46,6 +49,11 @@ export class HomeArticleComponent {
           post.body,
         ));
       })
+
+      this.principalArticleId = this.listaPosts[0].id;
+      this.principalArticleTitle = this.listaPosts[0].title;
+      this.principalArticleBody = this.listaPosts[0].body;
+      
     }, error => {
       console.log(error)
     });

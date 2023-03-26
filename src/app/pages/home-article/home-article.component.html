@@ -7,10 +7,10 @@
             width: '100%',
             border: '1px solid white'
           }"></ngx-skeleton-loader>
-        <div [id]="listaPosts[0].id" [ngClass]="{'display-none': ImagePrincipalArticle === false}" class="flex f-col align-center gap-3">
+        <div (click)="openPost($event)" [id]="principalArticleId" [ngClass]="{'display-none': ImagePrincipalArticle === false}" class="flex f-col align-center gap-3">
             <img alt="principal article" src="https://api.lorem.space/image/game?w=1100&amp;amp;amp;amp;h=533">
-            <h2>{{listaPosts[0].title}} </h2>
-            <p>{{listaPosts[0].body}}</p>
+            <h2>{{principalArticleTitle}} </h2>
+            <p>{{principalArticleBody}}</p>
         </div>
     </div>
     <div class="bar mt-3 mb-3"></div>
