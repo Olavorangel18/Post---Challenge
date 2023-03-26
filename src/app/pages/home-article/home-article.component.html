@@ -18,19 +18,7 @@
     <div class="list-articles flex f-col align-center">
         <h4 class="mb-3">All articles</h4>
         <div class="articles flex f-wrap justify-center gap-row-3 gap-col-15">
-            <div class="article">
-                <ngx-skeleton-loader *ngIf="!imageToShow" count="5"
-                [theme]="{ 
-                    'border-radius': '5px',
-                    height: '15px',
-                    width: '100%',
-                    border: '1px solid white'
-                  }"></ngx-skeleton-loader>
-                  <div [ngClass]="{'display-none': imageToShow === false}" class="item">
-                    <img alt="article" src="https://api.lorem.space/image/game?w=300&amp;amp;amp;amp;h=176">
-                    <h5>Titulo do Artigo</h5>
-                  </div>
-            </div>
+            <app-article-item [articleTitle]="'Nome do artigo'"></app-article-item>
         </div>
     </div>
 </div>

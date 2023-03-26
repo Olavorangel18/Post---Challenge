@@ -11,18 +11,10 @@ export class HomeArticleComponent {
 
   ) { }
 
-  imageToShow: boolean = false;
   ImagePrincipalArticle: boolean = false;
 
   ngOnInit(): void {
-    this.showImages();
     this.showPrincipalArticle();
-  }
-
-  showImages(){
-    setInterval(() => {
-        this.imageToShow = true;
-    },1000)
   }
 
   showPrincipalArticle(){

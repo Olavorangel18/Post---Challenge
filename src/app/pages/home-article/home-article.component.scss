@@ -48,17 +48,9 @@ ngx-skeleton-loader{
 
         .articles{
             width: 650px;
-            .article{
+            app-article-item{
                 width: 300px;
             }
         }
     }
-}
-
-.display-none{
-    display: none;
-}
-
-.visible{
-    visibility: hidden;
 }
