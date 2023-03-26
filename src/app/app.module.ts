@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeArticleComponent } from './pages/home-article/home-article.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { BrokerBackendService } from './services/brocker-backend/brocker-backend.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,11 @@ import { HomeArticleComponent } from './pages/home-article/home-article.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
   ],
-  providers: [],
+  providers: [BrokerBackendService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
