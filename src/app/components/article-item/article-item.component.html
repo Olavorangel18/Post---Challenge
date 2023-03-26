@@ -5,7 +5,7 @@
     width: '100%',
     border: '1px solid white'
   }"></ngx-skeleton-loader>
-  <div [ngClass]="{'display-none': imageToShow === false}" class="item">
+  <div [ngClass]="{'display-none': imageToShow === false}" class="item flex f-col align-center">
     <img alt="article" src="https://api.lorem.space/image/game?w=300&amp;amp;amp;amp;h=176">
-    <h5>{{articleTitle}}</h5>
+    <h5 class="pt-15px">{{articleTitle}}</h5>
   </div>

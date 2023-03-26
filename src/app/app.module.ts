@@ -8,12 +8,14 @@ import { HomeArticleComponent } from './pages/home-article/home-article.componen
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { BrokerBackendService } from './services/brocker-backend/brocker-backend.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleItemComponent } from './components/article-item/article-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeArticleComponent
+    HomeArticleComponent,
+    ArticleItemComponent
   ],
   imports: [
     BrowserModule,
