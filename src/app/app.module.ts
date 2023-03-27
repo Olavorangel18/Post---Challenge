@@ -14,6 +14,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { PostsService } from './services/posts/post.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { UsersService } from './services/users/user.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     NgxPaginationModule,
     NgxSkeletonLoaderModule.forRoot({ animation: 'pulse', loadingText: 'This item is actually loading...' }),
   ],
-  providers: [BrokerBackendService, PostsService],
+  providers: [BrokerBackendService, PostsService, UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
