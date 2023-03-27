@@ -1,1 +1,7 @@
-<p>pagination works!</p>
+<div class="pagination-container pb-3">
+    <div class="pagination">
+        <a (click)="prevPage()">&laquo;</a>
+        <a *ngFor="let index of listaPages" (click)="changePage($event)" class="page" id="page-{{index}}">{{index}}</a>
+        <a (click)="nextPage()">&raquo;</a>
+    </div>
+</div>

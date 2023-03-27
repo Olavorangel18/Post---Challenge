@@ -1,9 +1,9 @@
 <div class="container">
     <div class="main-article flex f-col align-center gap-3">
-        <ngx-skeleton-loader *ngIf="!ImagePrincipalArticle" count="5"
+        <ngx-skeleton-loader style="height: 700px;" *ngIf="!ImagePrincipalArticle" count="1"
         [theme]="{ 
             'border-radius': '5px',
-            height: '30px',
+            height: '100%',
             width: '100%',
             border: '1px solid white'
           }"></ngx-skeleton-loader>
@@ -21,7 +21,11 @@
         </div>
     </div>
 
-    <app-pagination></app-pagination>
+    <app-pagination (prevPageEmitter)="prevPage()"
+                    (nextPageEmitter)="nextPage()"
+                    [pageSize]="totalPages"
+                    (changePageEmitter)="changePage($event)"
+    ></app-pagination>
 </div>
 
 

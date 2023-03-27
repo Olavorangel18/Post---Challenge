@@ -19,6 +19,7 @@ export class PostPageComponent {
     bodyPost: string = '';
     ImagePrincipalArticle: boolean = false;
     commentList: Comment[] = [];
+    postCharged: boolean = false;
 
 
     ngOnInit(): void {
@@ -44,6 +45,7 @@ export class PostPageComponent {
     this.postService.getPostByID(this.id).subscribe((response: Post) => {
       this.titlePost = response.title;
       this.bodyPost = response.body;
+      this.postCharged = true;
       },
       error => {
         console.log(error)

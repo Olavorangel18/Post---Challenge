@@ -21,7 +21,8 @@ export class HomeArticleComponent {
   principalArticleId: number = 0;
   principalArticleTitle: string = '';
   principalArticleBody: string = '';
-  page:number = 1;
+  page:number = 0;
+  totalPages:number = 0;
 
   ngOnInit(): void {
     this.getPosts();
@@ -55,7 +56,7 @@ export class HomeArticleComponent {
       this.principalArticleTitle = this.listaPosts[0].title;
       this.principalArticleBody = this.listaPosts[0].body;
       this.listaPosts = this.divideLista(this.listaPosts, 10);
-      console.log(this.listaPosts)
+      this.totalPages = this.listaPosts.length;
     }, error => {
       console.log(error)
     });
@@ -74,6 +75,18 @@ export class HomeArticleComponent {
 
   openPost(e:any){
     this.router.navigateByUrl(`/post/${e.currentTarget.id}`);
+  }
+
+  prevPage(){
+    this.page = (this.page - 1) % this.totalPages;
+  }
+
+  nextPage(){
+    this.page = (this.page + 1) % this.totalPages;
+  }
+
+  changePage(page:number){
+    this.page = page - 1;
   }
 
 }

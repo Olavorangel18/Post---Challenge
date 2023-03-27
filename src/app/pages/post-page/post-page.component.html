@@ -1,9 +1,9 @@
 <div class="w-100 h-100 flex f-col gap-3 align-center">
     <h2>{{titlePost}}</h2>
-    <ngx-skeleton-loader *ngIf="!ImagePrincipalArticle" count="5"
+    <ngx-skeleton-loader style="height: 533px;" *ngIf="!ImagePrincipalArticle" count="1"
     [theme]="{ 
         'border-radius': '5px',
-        height: '30px',
+        height: '100%',
         width: '100vw',
         border: '1px solid white'
       }"></ngx-skeleton-loader>
@@ -17,19 +17,54 @@
                 <p>Descrição do usuário</p>
             </div>
         </div>
-        <div class="post">
+        <ngx-skeleton-loader *ngIf="!postCharged" style="height: 200px;" count="1"
+            [theme]="{ 
+            'border-radius': '5px',
+            height: '100%',
+            border: '1px solid white'
+            }">
+        </ngx-skeleton-loader>
+        <div *ngIf="postCharged" class="post">
             <p>{{bodyPost}}</p>
         </div>
-        <div class="post">
+        <ngx-skeleton-loader *ngIf="!postCharged" style="height: 200px;" count="1"
+            [theme]="{ 
+            'border-radius': '5px',
+            height: '100%',
+            border: '1px solid white'
+            }">
+        </ngx-skeleton-loader>
+        <div *ngIf="postCharged" class="post">
             <p>{{bodyPost}}</p>
         </div>
-        <div class="post">
+        <ngx-skeleton-loader *ngIf="!postCharged" style="height: 200px;" count="1"
+            [theme]="{ 
+            'border-radius': '5px',
+            height: '100%',
+            border: '1px solid white'
+            }">
+        </ngx-skeleton-loader>
+        <div *ngIf="postCharged" class="post">
             <p>{{bodyPost}}</p>
         </div>
-        <div class="post">
+        <ngx-skeleton-loader *ngIf="!postCharged" style="height: 200px;" count="1"
+            [theme]="{ 
+            'border-radius': '5px',
+            height: '100%',
+            border: '1px solid white'
+            }">
+        </ngx-skeleton-loader>
+        <div *ngIf="postCharged" class="post">
             <p>{{bodyPost}}</p>
         </div>
-                <div class="post">
+        <ngx-skeleton-loader *ngIf="!postCharged" style="height: 200px;" count="1"
+            [theme]="{ 
+            'border-radius': '5px',
+            height: '100%',
+            border: '1px solid white'
+            }">
+        </ngx-skeleton-loader>
+        <div *ngIf="postCharged" class="post">
             <p>{{bodyPost}}</p>
         </div>
     </div>
