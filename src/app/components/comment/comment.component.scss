@@ -12,3 +12,14 @@
 img{
     border-radius: 9999px;
 }
+
+@media (max-width: 450px) {
+
+    p{
+        font-size: 14px !important;
+    }
+
+    h3{
+        font-size: 14px !important;
+    }
+  }

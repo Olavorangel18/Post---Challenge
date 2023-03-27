@@ -78,4 +78,26 @@ h4{
     max-width: 800px;
 }
 
+@media (max-width: 600px) {
+    h2 {
+      font-size: 40px !important;
+    }
+
+    .align-center-responsivo{
+        align-items: center !important;
+    }
+  }
+
+  @media (max-width: 800px) {
+
+    h4{
+       justify-content: center !important;
+    }
+    .align-center-responsivo{
+        align-items: center !important;
+    }
+
+  }
+
+
 
