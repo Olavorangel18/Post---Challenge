@@ -1,5 +1,5 @@
 # Pré-requisitos
-Antes de começar, certifique-se de ter o Node.js e a CLI do Angular instalados em sua máquina. Você pode baixar o Node.js em https://nodejs.org/ e instalar a CLI do Angular executando o comando npm install -g @angular/cli.
+Antes de começar, certifique-se de ter o Node.js e a CLI do Angular instalados em sua máquina. Você pode baixar o Node.js em https://nodejs.org/ e instalar a CLI do Angular executando o comando **npm install -g @angular/cli**.
 
 # Instalação
 Clone este repositório em sua máquina usando o comando git clone https://github.com/Olavorangel18/Post---Challenge.git
