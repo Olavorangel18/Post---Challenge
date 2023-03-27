@@ -11,20 +11,27 @@ import { Post } from 'src/app/models/post.model';
   styleUrls: ['./post-page.component.scss']
 })
 export class PostPageComponent {
-  constructor(
-    private route: ActivatedRoute,
-    private postService: PostsService,
-    private userService: UsersService
+    constructor(
+      private route: ActivatedRoute,
+      private postService: PostsService,
+      private userService: UsersService
     ) { }
+
+    // Informações do Post
     id: number = 0;
     titlePost: string = '';
     bodyPost: string = '';
     userId: number | undefined;
-    ImagePrincipalArticle: boolean = false;
-    commentList: Comment[] = [];
-    postCharged: boolean = false;
     nameUser: string = '';
     emailUser: string = '';
+
+    // Controles de exibição
+    postCharged: boolean = false;
+    ImagePrincipalArticle: boolean = false;
+
+    // listagem de comentários
+    commentList: Comment[] = [];
+
 
 
     ngOnInit(): void {
@@ -34,11 +41,7 @@ export class PostPageComponent {
       this.getCommentsPostByID();
     }
 
-    showPrincipalArticle(){
-      setInterval(() => {
-          this.ImagePrincipalArticle = true;
-      },2000)
-    }
+
 
   /*------------------------------------------------------*/
    
@@ -87,6 +90,18 @@ export class PostPageComponent {
       error => {
         console.log(error)
       })
+  }
+
+  /*------------------------------------------------------*/
+   
+  //                     Diversos
+
+  /*------------------------------------------------------*/
+
+  showPrincipalArticle(){
+    setInterval(() => {
+        this.ImagePrincipalArticle = true;
+    },2000)
   }
     
 }

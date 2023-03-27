@@ -15,24 +15,22 @@ export class HomeArticleComponent {
     private router: Router
   ) { }
 
+  // Listagem de Posts
   listaPosts: any[] = [];
 
+  // Post Principal
   ImagePrincipalArticle: boolean = false;
   principalArticleId: number = 0;
   principalArticleTitle: string = '';
   principalArticleBody: string = '';
+  
+  // Paginação
   page:number = 0;
   totalPages:number = 0;
 
   ngOnInit(): void {
     this.getPosts();
     this.showPrincipalArticle();
-  }
-
-  showPrincipalArticle(){
-    setInterval(() => {
-        this.ImagePrincipalArticle = true;
-    },2000)
   }
 
   /*------------------------------------------------------*/
@@ -62,6 +60,36 @@ export class HomeArticleComponent {
     });
   }
 
+  /*------------------------------------------------------*/
+   
+  //                    Paginação
+
+  /*------------------------------------------------------*/
+
+  prevPage(){
+    this.page = (this.page - 1) % this.totalPages;
+  }
+
+  nextPage(){
+    this.page = (this.page + 1) % this.totalPages;
+  }
+
+  changePage(page:number){
+    this.page = page - 1;
+  }
+
+  /*------------------------------------------------------*/
+   
+  //                     Diversos
+
+  /*------------------------------------------------------*/
+
+  showPrincipalArticle(){
+    setInterval(() => {
+        this.ImagePrincipalArticle = true;
+    },2000)
+  }
+
   divideLista(lista:any[], n:number) {
     var subListas = [];
     var tamanhoSubLista = Math.ceil(lista.length/n);
@@ -75,18 +103,6 @@ export class HomeArticleComponent {
 
   openPost(e:any){
     this.router.navigateByUrl(`/post/${e.currentTarget.id}`);
-  }
-
-  prevPage(){
-    this.page = (this.page - 1) % this.totalPages;
-  }
-
-  nextPage(){
-    this.page = (this.page + 1) % this.totalPages;
-  }
-
-  changePage(page:number){
-    this.page = page - 1;
   }
 
 }

@@ -7,14 +7,24 @@ import { Component, Input, SimpleChanges, Output, EventEmitter } from '@angular/
 })
 export class PaginationComponent {
 
+
+  // Informaçoes da Página
   page: number = 1;
   @Input() pageSize: number = 0;
   lastPage: number | undefined;
   listaPages: number[] = [];
 
+  // Controles de eventos
   @Output() nextPageEmitter = new EventEmitter();
   @Output() prevPageEmitter = new EventEmitter();
   @Output() changePageEmitter = new EventEmitter();
+
+
+  /*------------------------------------------------------*/
+   
+  //                    Inicialização
+
+  /*------------------------------------------------------*/
 
   ngOnChanges(changes: SimpleChanges){
     if(changes['page']) this.lastPage = changes['page'].previousValue
@@ -24,6 +34,13 @@ export class PaginationComponent {
   ngAfterViewChecked(){
     document.querySelector(`#page-${this.page}`)?.classList.add('active');
   }
+
+
+  /*------------------------------------------------------*/
+   
+  //                Controles da Paginação
+
+  /*------------------------------------------------------*/
 
   activePage(){
     document.querySelectorAll('.page').forEach(item => item.classList.remove('active'));
