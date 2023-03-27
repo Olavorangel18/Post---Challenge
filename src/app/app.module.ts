@@ -13,6 +13,7 @@ import { PostPageComponent } from './pages/post-page/post-page.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { PostsService } from './services/posts/post.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     ArticleItemComponent,
     PostPageComponent,
     CommentComponent,
+    PaginationComponent,
 
   ],
   imports: [

@@ -20,6 +20,8 @@
             <app-article-item (click)="openPost($event)" *ngFor="let post of listaPosts[page]" [articleTitle]="post.title" [id]="post.id"></app-article-item>
         </div>
     </div>
+
+    <app-pagination></app-pagination>
 </div>
 
 
