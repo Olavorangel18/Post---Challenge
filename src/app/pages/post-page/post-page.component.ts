@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { PostsService } from 'src/app/services/posts/post.service';
+import { UsersService } from 'src/app/services/users/user.service';
 import {Comment} from 'src/app/models/comment.model';
 import { Post } from 'src/app/models/post.model';
 
@@ -13,13 +14,17 @@ export class PostPageComponent {
   constructor(
     private route: ActivatedRoute,
     private postService: PostsService,
+    private userService: UsersService
     ) { }
     id: number = 0;
     titlePost: string = '';
     bodyPost: string = '';
+    userId: number | undefined;
     ImagePrincipalArticle: boolean = false;
     commentList: Comment[] = [];
     postCharged: boolean = false;
+    nameUser: string = '';
+    emailUser: string = '';
 
 
     ngOnInit(): void {
@@ -45,7 +50,9 @@ export class PostPageComponent {
     this.postService.getPostByID(this.id).subscribe((response: Post) => {
       this.titlePost = response.title;
       this.bodyPost = response.body;
+      this.userId = response.userId;
       this.postCharged = true;
+      this.getUserByID(this.userId);
       },
       error => {
         console.log(error)
@@ -66,6 +73,16 @@ export class PostPageComponent {
           )
         )
       })
+      },
+      error => {
+        console.log(error)
+      })
+  }
+
+  getUserByID(id:number) {
+    this.userService.getUserByID(id).subscribe((response: any) => {
+      this.emailUser = response.email;
+      this.nameUser = response.name;
       },
       error => {
         console.log(error)

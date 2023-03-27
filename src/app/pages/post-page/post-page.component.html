@@ -13,8 +13,8 @@
         <div class="user flex align-center">
             <img alt="imagem do usuário" src="https://api.lorem.space/image/face?w=56&amp;amp;amp;amp;h=56">
             <div class="info flex f-col">
-                <h3>Nome do usuário</h3>
-                <p>Descrição do usuário</p>
+                <h3>{{nameUser}}</h3>
+                <p>{{emailUser}}</p>
             </div>
         </div>
         <ngx-skeleton-loader *ngIf="!postCharged" style="height: 200px;" count="1"
